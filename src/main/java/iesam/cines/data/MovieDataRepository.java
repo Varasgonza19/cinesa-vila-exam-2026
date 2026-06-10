@@ -3,6 +3,8 @@ package iesam.cines.data;
 import iesam.cines.domain.Movie;
 import iesam.cines.domain.MovieRepository;
 
+import java.util.ArrayList;
+
 public class MovieDataRepository implements MovieRepository {
 
     private MovieMemLocalDataSource dataSource = new MovieMemLocalDataSource().getInstance();
@@ -10,5 +12,10 @@ public class MovieDataRepository implements MovieRepository {
     @Override
     public void saveMovie(Movie movie) {
         dataSource.save(movie);
+    }
+
+    @Override
+    public ArrayList<Movie> getMovies() {
+        return dataSource.findAll();
     }
 }
