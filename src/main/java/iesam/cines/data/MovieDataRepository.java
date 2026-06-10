@@ -18,4 +18,9 @@ public class MovieDataRepository implements MovieRepository {
     public ArrayList<Movie> getMovies() {
         return dataSource.findAll();
     }
+
+    @Override
+    public void deleteMovie(String id) {
+        dataSource.delete(id);
+    }
 }
