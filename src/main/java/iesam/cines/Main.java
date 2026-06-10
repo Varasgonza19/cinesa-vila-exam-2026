@@ -10,6 +10,10 @@ public class Main{
         MovieView.prints();
         MovieView.saveMovie();
         MovieView.prints();
+        // Funcion3
+        MovieView.prints();
+        MovieView.deleteMovie();
+        MovieView.prints();
 
 
     }

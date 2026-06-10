@@ -3,6 +3,7 @@ package iesam.cines.presentation;
 import iesam.cines.data.MovieDataRepository;
 import iesam.cines.domain.GetMoviesUseCase;
 import iesam.cines.domain.Movie;
+import iesam.cines.domain.UseCaseDeleteMovie;
 import iesam.cines.domain.UseCaseSaveMovie;
 
 import java.util.ArrayList;
@@ -20,6 +21,12 @@ public class MovieView {
         GetMoviesUseCase getMoviesUseCase = new GetMoviesUseCase(new MovieDataRepository());
         ArrayList<Movie> movies = getMoviesUseCase.execute();
         System.out.println(movies);
+    }
+
+    public static void deleteMovie(){
+        UseCaseDeleteMovie useCaseDeleteMovie = new UseCaseDeleteMovie(new MovieDataRepository());
+        useCaseDeleteMovie.execute("tt0133093");
+        System.out.println("Delete Movie");
     }
 
 }
