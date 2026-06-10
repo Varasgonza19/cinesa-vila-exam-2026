@@ -1,8 +1,11 @@
 package iesam.cines.presentation;
 
 import iesam.cines.data.MovieDataRepository;
+import iesam.cines.domain.GetMoviesUseCase;
 import iesam.cines.domain.Movie;
 import iesam.cines.domain.UseCaseSaveMovie;
+
+import java.util.ArrayList;
 
 public class MovieView {
 
@@ -12,4 +15,11 @@ public class MovieView {
         useCaseSaveMovie.execute(movie);
         System.out.println("Movie save :: " + movie);
     }
+
+    public static void prints(){
+        GetMoviesUseCase getMoviesUseCase = new GetMoviesUseCase(new MovieDataRepository());
+        ArrayList<Movie> movies = getMoviesUseCase.execute();
+        System.out.println(movies);
+    }
+
 }
